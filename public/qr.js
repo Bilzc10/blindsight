@@ -31,10 +31,10 @@ window.onload = function() {
       var code = jsQR(imageData.data, imageData.width, imageData.height, {
         inversionAttempts: "dontInvert",
       });
-      if(code && code.data != phrase) {
-        phrase = code.data;
-        console.log(code.data);
-        Marvin.say(code.data);
+      if(code && code.data.includes("blindsight") && code.data.replace("blindsight", "") != phrase) {
+        phrase = code.data.replace("blindsight", "");
+        console.log(phrase);
+        Marvin.say(phrase);
       }
     }
     requestAnimationFrame(tick);
