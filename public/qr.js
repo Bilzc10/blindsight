@@ -1,4 +1,7 @@
 window.onload = function() {
+  //Other
+  var Marvin = new Artyom();
+
   //Html ELements
   var video = document.createElement("video");
   video.style.display = "none";
@@ -29,6 +32,7 @@ window.onload = function() {
       });
       if(code) {
         console.log(code.data);
+        Marvin.say(code.data);
       }
     }
     requestAnimationFrame(tick);
