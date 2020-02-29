@@ -31,10 +31,12 @@ window.onload = function() {
       var code = jsQR(imageData.data, imageData.width, imageData.height, {
         inversionAttempts: "dontInvert",
       });
-      if(code && code.data.includes("blindsight") && code.data.replace("blindsight", "") != phrase) {
-        phrase = code.data.replace("blindsight", "");
-        console.log(phrase);
-        Marvin.say(phrase);
+      if(code) {
+        console.log(code.data);
+        if(code.data.includes("blindsight") && code.data.replace("blindsight", "") != phrase) {
+          phrase = code.data.replace("blindsight", "");
+          Marvin.say(phrase);
+        }
       }
     }
     requestAnimationFrame(tick);
