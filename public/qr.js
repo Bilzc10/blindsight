@@ -32,8 +32,8 @@ window.onload = function() {
       });
       if(code) {
         console.log(code.data);
-        Marvin.say(code.data);
         setTimeout(tick, 1000);
+        Marvin.say(code.data);
       }
     }
     requestAnimationFrame(tick);
