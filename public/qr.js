@@ -1,5 +1,5 @@
 window.onload = function() {
-  var jsQR = require("jsqr");
+  
   //Html ELements
   var video = document.createElement("video");
   video.style.display = "none";
