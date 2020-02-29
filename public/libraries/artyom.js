@@ -1,4 +1,3 @@
-"use strict";
 /**
  * Artyom.js is a voice control, speech recognition and speech synthesis JavaScript library.
  *
@@ -10,7 +9,6 @@
  * @see https://sdkcarlos.github.io/sites/artyom.html
  * @see http://docs.ourcodeworld.com/projects/artyom-js
  */
-Object.defineProperty(exports, "__esModule", { value: true });
 /// <reference path="artyom.d.ts" />
 // Remove "export default " keywords if willing to build with `npm run artyom-build-window`
 var Artyom = (function () {
@@ -1477,4 +1475,3 @@ var Artyom = (function () {
     };
     return Artyom;
 }());
-exports.default = Artyom;
