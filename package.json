@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Bilzc10/ARWHUD#readme",
   "dependencies": {
+    "artyom.js": "^1.0.6",
     "express": "^4.17.1"
   }
 }
