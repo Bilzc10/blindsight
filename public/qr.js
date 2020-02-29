@@ -32,4 +32,5 @@ window.onload = function() {
       }
     }
     requestAnimationFrame(tick);
+  }
 }
