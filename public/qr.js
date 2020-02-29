@@ -1,6 +1,7 @@
 window.onload = function() {
   //Other
   var Marvin = new Artyom();
+  var phrase = "placeholder";
 
   //Html ELements
   var video = document.createElement("video");
@@ -30,9 +31,9 @@ window.onload = function() {
       var code = jsQR(imageData.data, imageData.width, imageData.height, {
         inversionAttempts: "dontInvert",
       });
-      if(code) {
+      if(code && code.data != phrase) {
+        phrase = code.data;
         console.log(code.data);
-        setTimeout(tick, 1000);
         Marvin.say(code.data);
       }
     }
