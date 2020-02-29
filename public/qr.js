@@ -33,6 +33,7 @@ window.onload = function() {
       if(code) {
         console.log(code.data);
         Marvin.say(code.data);
+        setTimeout(console.log("waiting done"), 500);
       }
     }
     requestAnimationFrame(tick);
