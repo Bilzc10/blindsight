@@ -1,5 +1,4 @@
 window.onload = function() {
-  
   //Html ELements
   var video = document.createElement("video");
   video.style.display = "none";
