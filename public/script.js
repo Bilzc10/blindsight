@@ -77,9 +77,9 @@ window.onload = () => {
         console.log(code.data);
         if(code.data.includes("blindsight") && code.data.replace("blindsight", "") != phrase) {
           phrase = code.data.replace("blindsight", "");
-          Marvin.say(phrase,{
-            onStart:function() { speaking = true; },
-            onEnd:function() { speaking = false; }
+          Marvin.say(phrase, {
+            onStart: function() { speaking = true; },
+            onEnd: function() { speaking = false; }
           });
         }
       }
