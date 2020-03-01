@@ -18,7 +18,7 @@ window.onload = () => {
     });
 
     socket.on("data", (dist) => { // dist -> distance in cm
-      if (dist < maxDist) { // ~1 foot
+      if (dist < maxDist && dist > minDist) { // ~1 foot
         window.navigator.vibrate(100);
         let freq = (((maxDist-dist)/maxDist) * (maxFreq - minFreq)) + minFreq;
         console.log(dist, true, freq);
