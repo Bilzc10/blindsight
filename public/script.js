@@ -69,7 +69,7 @@ window.onload = () => {
       canvasElement.height = video.videoHeight;
       canvasElement.width = video.videoWidth;
       canvas.drawImage(video, 0, 0, canvasElement.width, canvasElement.height);
-      var imageData = canvas.getImageData(canvasElement.height*(1/4), canvasElement.height*(1/4), canvasElement.height*(3/4), canvasElement.height*(3/4));
+      var imageData = canvas.getImageData(0, 0, canvasElement.width, canvasElement.height);
       var code = jsQR(imageData.data, imageData.width, imageData.height, {
         inversionAttempts: "dontInvert",
       });
