@@ -22,7 +22,7 @@ window.onload = () => {
         window.navigator.vibrate(100);
         let freq = (((maxDist-dist)/maxDist) * (maxFreq - minFreq)) + minFreq;
         console.log(dist, true, freq);
-        synth.triggerAttack(freq, "+0.0");
+        if (!speaking) synth.triggerAttack(freq, "+0.0");
       } else if (dist > minDist) {
         synth.triggerRelease();
         console.log(dist, false);
