@@ -1,6 +1,6 @@
 window.onload = () => {
   document.getElementById("clicker").onclick = function() {
-    document.getElementById("body").style.backgroundColor = "black";
+    document.getElementById("logo").src = "/media/closed.png";
     document.getElementById("clicker").style.display = "none";
 
     var canVibrate = window.navigator.vibrate(0);
