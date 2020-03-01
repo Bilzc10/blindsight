@@ -85,6 +85,7 @@ window.onload = () => {
       });
       if(code) {
         console.log(code.data);
+        alert(code.data);
         if(code.data.includes("blindsight") && code.data.replace("blindsight", "") != phrase) {
           phrase = code.data.replace("blindsight", "");
           Marvin.say(phrase, {
