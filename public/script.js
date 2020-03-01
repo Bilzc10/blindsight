@@ -1,3 +1,4 @@
+var synth = new Tone.Synth().toMaster();
 window.onload = () => {
   document.getElementById("clicker").onclick = function() {
     document.getElementById("logo").src = "/media/open.png";
@@ -6,7 +7,6 @@ window.onload = () => {
     var canVibrate = window.navigator.vibrate(0);
     console.log("Can vibrate?", canVibrate);
 
-    var synth = new Tone.Synth().toMaster();
 
     var maxDist = 100; // Max distance in cm
     var minDist = 5;
@@ -22,7 +22,7 @@ window.onload = () => {
         window.navigator.vibrate(100);
         let freq = (((maxDist-dist)/maxDist) * (maxFreq - minFreq)) + minFreq;
         console.log(dist, true, freq);
-        if (!speaking) synth.triggerAttack(freq, "+0.0");
+        if (!speaking) synth.triggerAttack(freq, "+0.0"); // speaking -> global variable, denotes if marvin is reading qr codes
       } else if (dist > minDist) {
         synth.triggerRelease();
         console.log(dist, false);

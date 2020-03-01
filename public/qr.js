@@ -1,6 +1,8 @@
+var speaking = false;
+
 window.onload = function() {
+  console.log("qr recognition started")
   //Other
-  var speaking = false;
   var Marvin = new Artyom();
   var phrase = "placeholder";
 
