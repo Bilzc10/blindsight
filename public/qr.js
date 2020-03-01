@@ -1,5 +1,6 @@
 window.onload = function() {
   //Other
+  var speaking = false;
   var Marvin = new Artyom();
   var phrase = "placeholder";
 
@@ -35,7 +36,10 @@ window.onload = function() {
         console.log(code.data);
         if(code.data.includes("blindsight") && code.data.replace("blindsight", "") != phrase) {
           phrase = code.data.replace("blindsight", "");
-          Marvin.say(phrase);
+          Marvin.say(phrase,{
+            onStart:function() { speaking = true; },
+            onEnd:function() { speaking = false; }
+          });
         }
       }
     }
