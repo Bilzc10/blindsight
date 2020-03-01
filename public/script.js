@@ -8,7 +8,8 @@ window.onload = () => {
 
     var synth = new Tone.Synth().toMaster();
 
-    var maxDist = 30; // Max distance in cm
+    var maxDist = 100; // Max distance in cm
+    var minDist = 5;
     var maxFreq = 3000;
     var minFreq = 00;
 
@@ -17,14 +18,16 @@ window.onload = () => {
     });
 
     socket.on("data", (dist) => { // dist -> distance in cm
-      if (dist < maxDist) { // ~1 foot
+      if (dist < maxDist && dist > minDist) { // ~1 foot
         window.navigator.vibrate(100);
         let freq = (((maxDist-dist)/maxDist) * (maxFreq - minFreq)) + minFreq;
         console.log(dist, true, freq);
         synth.triggerAttack(freq, "+0.0");
-      } else {
+      } else if (dist > minDist) {
         synth.triggerRelease();
         console.log(dist, false);
+      } else {
+        console.warn(dist)
       }
     });
     socket.on("connect", () => {
