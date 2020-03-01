@@ -10,8 +10,8 @@ window.onload = () => {
 
     var maxDist = 100; // Max distance in cm
     var minDist = 5;
-    var maxFreq = 3000;
-    var minFreq = 00;
+    var maxFreq = 2000;
+    var minFreq = 100;
 
     var socket = io({
       reconnection: true
