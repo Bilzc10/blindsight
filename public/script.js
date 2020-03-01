@@ -31,7 +31,7 @@ window.onload = () => {
 
     socket.on("data", (dist) => { // dist -> distance in cm
       if (dist < maxDist && dist > minDist) { // ~1 foot
-        window.navigator.vibrate(100);
+        //window.navigator.vibrate(100);
         let freq = (((maxDist-dist)/maxDist) * (maxFreq - minFreq)) + minFreq;
         console.log(dist, true, freq);
         if (!speaking) synth.triggerAttack(freq, "+0.0"); // speaking -> global variable, denotes if marvin is reading qr codes
@@ -85,7 +85,15 @@ window.onload = () => {
       });
       if(code) {
         console.log(code.data);
-        if(code.data.includes("blindsight") && code.data.replace("blindsight", "") != phrase) {
+        if(code.data == "blindsight1" && "1" != phrase) {
+          phrase = "1";
+          introString = "Welcome to BlindSight. Beeps will alert you that you are close to an object. Finding other QR codes will direct you through the maze. Watch out for obstacles and move forward to begin. Good luck!"
+          Marvin.say(introString, {
+            onStart: function() { speaking = true; },
+            onEnd: function() { speaking = false; }
+          });
+        }
+        else if(code.data.includes("blindsight") && code.data.replace("blindsight", "") != phrase) {
           phrase = code.data.replace("blindsight", "");
           Marvin.say(phrase, {
             onStart: function() { speaking = true; },
