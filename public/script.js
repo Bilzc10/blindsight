@@ -26,6 +26,8 @@ window.onload = () => {
       } else if (dist > minDist) {
         synth.triggerRelease();
         console.log(dist, false);
+      } else {
+        console.warn(dist)
       }
     });
     socket.on("connect", () => {
