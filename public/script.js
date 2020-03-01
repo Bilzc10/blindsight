@@ -1,4 +1,15 @@
-var synth = new Tone.Synth().toMaster();
+var synth = new Tone.Synth(
+  {
+    envelope : {
+      attack : 0 ,
+      decay : 0,
+      sustain : 0.1,
+      release : 0
+    }
+  }
+).toMaster();
+synth.volume.value = -40;
+
 var speaking = false;
 
 window.onload = () => {
@@ -9,8 +20,7 @@ window.onload = () => {
     var canVibrate = window.navigator.vibrate(0);
     console.log("Can vibrate?", canVibrate);
 
-
-    var maxDist = 100; // Max distance in cm
+    var maxDist = 80; // Max distance in cm
     var minDist = 5;
     var maxFreq = 2000;
     var minFreq = 100;
@@ -75,6 +85,7 @@ window.onload = () => {
       });
       if(code) {
         console.log(code.data);
+        alert(code.data);
         if(code.data.includes("blindsight") && code.data.replace("blindsight", "") != phrase) {
           phrase = code.data.replace("blindsight", "");
           Marvin.say(phrase, {
