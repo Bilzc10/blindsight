@@ -6,7 +6,8 @@
   <meta name="mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="translucent-black">
-	<meta name="apple-mobile-web-app-title" content="Blindsight">
+	<meta name="apple-mobile-web-app-title" content="BlindSight">
+  <link rel="apple-touch-icon" href="logo.png">
   <script src="libraries/jsQR.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.0/socket.io.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.5.39/Tone.js"></script>
@@ -14,8 +15,9 @@
   <script src="qr.js"></script>
   <script src="script.js"></script>
 </head>
-<body id="body">
-  <div style="height: 100vh; width: 100vw;" id="clicker">
+<body id="body" style="margin: 0; padding: 0; border: 0; position: fixed;">
+  <div style="height: 100vh; width: 100vw;" id="clicker"></div>
   <embed src="/libraries/success.wav" autostart="false" width="0" height="0" id="beep" enablejavascript="true">
+  <img src="logo.png" style="position: fixed; width: 100vmin; height: 100vmin; z-index: 10; top: 50%; left: 50%; transform: translate(-50%, -50%);">
 </body>
 </html>
