@@ -8,7 +8,7 @@ var synth = new Tone.Synth(
     }
   }
 ).toMaster();
-synth.volume.value = -40;
+synth.volume.value = -10;
 
 var speaking = false;
 
